@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="myBody">
+    <h1>
+        select language
+    </h1>
+    <select id="lanselect" onchange="changeLan()">
+        <option value="en">ٍEnglish</option>
+        <option value="ar">عربی</option>
+        <option value="fr">Francis</option>
+        <option value="fa">فارسی</option>
+
+
+
+    </select>
+    <p id="demo"></p>
+    <script>
+        let bodySection = document.getElementById("myBody");
+        let dropdown = document.getElementById("lanselect");
+        let mypara = document.getElementById("demo");
+        function changeLan() {
+            if (dropdown.value === "en") {
+                mypara.innerHTML = "welcome to English language!";
+                bodySection.style.direction = "ltr";
+
+            } else if (dropdown.value === "ar") {
+                bodySection.style.direction = "rtl";
+
+                mypara.innerHTML = "اهلا و صحلا"
+            } else if (dropdown.value === "fr") {
+                bodySection.style.direction = "ltr";
+
+                mypara.innerHTML = "Bonjour ! Veuillez choisir une langue."
+            } else if (dropdown.value === "fa") {
+                bodySection.style.direction = "rtl";
+
+                mypara.innerHTML = "به بخش فارسی زبان خوش آمدید!";
+            } else {
+                mypara.innerHTML = "unknown error";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
